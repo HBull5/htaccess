@@ -42,28 +42,27 @@
 
 ## Rewrite Variables 
 
-Variable	          Description
-========            ===========
+Variable Description
 
-%{HTTPS}	          Set to on if the request is served over SSL.
+%{HTTPS} Set to on if the request is served over SSL.
 
-%{HTTP_HOST}	      Everything between the protocol (http:// or https://) and the request (/examplefile.txt)
+%{HTTP_HOST} Everything between the protocol (http:// or https://) and the request (/examplefile.txt)
 
-%{REQUEST_URI}	    Everything after the server address — for example, a request to http://example.com/my/examplefile.txt sets this value as my/examplefile.txt
+%{REQUEST_URI} Everything after the server address — for example, a request to http://example.com/my/examplefile.txt sets this value as my/examplefile.txt
 
 
 ## Rewrite Flags 
 
-Flag	              Description
-====                ===========
-[F]	                The request is forbidden. This can be used with conditions, such as restricting access by IP address or environment to certain paths.
+[Flag] Description
 
-[L]	                If the previous conditions pass this rule is executed and no more evaluation is done. Note that if the RewriteRule redirects a user to another host the L flag is forced.
+[F]	The request is forbidden. This can be used with conditions, such as restricting access by IP address or environment to certain paths.
 
-[NC]                Non case-sensitive matching, commonly used in a RewriteCond where the host is evaluated. For example, mysite.com is the same as MySite.com
+[L]	If the previous conditions pass this rule is executed and no more evaluation is done. Note that if the RewriteRule redirects a user to another host the L flag is forced.
 
-[P]	                Proxy this request. This requires the mod_proxy extension to be enabled on the server. This acts like the R flag but instead of redirecting the visitor to a new URL, this URL is served as the content for the page they requested while keeping the URL in the address bar the same as requested. This is not enabled by default on Acquia Cloud. Customers who wish to use it should open a support ticket.
+[NC] Non case-sensitive matching, commonly used in a RewriteCond where the host is evaluated. For example, mysite.com is the same as MySite.com
 
-[PT]	              Passthrough causes any file path to be treated like a URI instead.
+[P] Proxy this request. This requires the mod_proxy extension to be enabled on the server. This acts like the R flag but instead of redirecting the visitor to a new URL, this URL is served as the content for the page they requested while keeping the URL in the address bar the same as requested. This is not enabled by default on Acquia Cloud. Customers who wish to use it should open a support ticket.
 
-[R]	                Issue a redirect code with the request. By default an R flag will issue a 302 Found (Moved Temporarily) redirection, although this may be overridden by specifying the status code to accompany the redirection. Commonly this will be set as R=301 which sends a 301 "Moved Permanently" code. This is best for SEO purposes where old documents are redirected to new URLs as it will trigger the search engine to remove the previously indexed URL and replace it with the new one.
+[PT] Passthrough causes any file path to be treated like a URI instead.
+
+[R] Issue a redirect code with the request. By default an R flag will issue a 302 Found (Moved Temporarily) redirection, although this may be overridden by specifying the status code to accompany the redirection. Commonly this will be set as R=301 which sends a 301 "Moved Permanently" code. This is best for SEO purposes where old documents are redirected to new URLs as it will trigger the search engine to remove the previously indexed URL and replace it with the new one.
