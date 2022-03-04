@@ -35,7 +35,7 @@
 
 - In most basic implementations you'll want to have all the `RewriteCond`'s evaluated and then just simply perform a redirect to effectively ommit the pattern just pass ^(.*)$
 
-- If you're done with your hypothetical block of `RewriteCond`'s followed by a `RewriteRule` its a good idea to pass the [ L ] flag as to stop evaluating other rules
+- If you're done with your hypothetical block of `RewriteCond`'s followed by a `RewriteRule` its a good idea to pass the [ L ] flag as to stop evaluating other rules, though if the `RewriteRule` redirects it will automatically force the [ L ] option
 
 - Typically a good idea to pass in an [ R ] flag as well with corresponding 301 ( permenant ) or 302 ( temporary ) 
 
