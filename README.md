@@ -66,3 +66,8 @@ Variable Description
 [PT] Passthrough causes any file path to be treated like a URI instead.
 
 [R] Issue a redirect code with the request. By default an R flag will issue a 302 Found (Moved Temporarily) redirection, although this may be overridden by specifying the status code to accompany the redirection. Commonly this will be set as R=301 which sends a 301 "Moved Permanently" code. This is best for SEO purposes where old documents are redirected to new URLs as it will trigger the search engine to remove the previously indexed URL and replace it with the new one.
+
+## Example 
+
+`RewriteCond %{REQUEST_URI} /old-file.php
+RewriteRule ^(.*)$ https://mydomain.com/new-file.php [L,R=302]`
