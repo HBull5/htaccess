@@ -70,4 +70,5 @@ Variable Description
 ## Example 
 
 `RewriteCond %{REQUEST_URI} /old-file.php`
+
 `RewriteRule ^(.*)$ https://mydomain.com/new-file.php [L,R=302]`
